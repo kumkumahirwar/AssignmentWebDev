@@ -1,0 +1,13 @@
+ body {
+      background-color: #0d1b2a;
+    }
+    .card {
+      border-radius: 12px;
+    }
+    .btn-custom {
+      background-color: #1b9aaa;
+      color: white;
+    }
+    .btn-custom:hover {
+      background-color: #147a86;
+    }
