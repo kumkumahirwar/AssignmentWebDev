@@ -1,5 +1,6 @@
 async function getWeather() {
-  const city = document.getElementById("city").value.trim();
+  try {
+    const city = document.getElementById("city").value.trim();
    if(city === "") {  
      alert('Please Select any state!!');
         return;
@@ -26,10 +27,18 @@ console.log(lat,lon);
       <img src=" https://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png" alt="WeatherIcon" >
  
  `;
+
+    
+  } catch (error) {
+    console.log(error.massege);
+    
+    
+  }
 }
 
 async function getGeoLoc(City) {
-  console.log(City);
+  try {
+     console.log(City);
   const response = await fetch(
     `http://api.openweathermap.org/geo/1.0/direct?q=${City}&limit=1&appid=7ba65e850bca64a01ba647e359e28e9a`
   );
@@ -37,5 +46,9 @@ async function getGeoLoc(City) {
   const lat = data[0].lat;
   const lon = data[0].lon;
 
-  return { lat, lon }; //json only with key  // Latitude:lat-> can also write
+  return { lat, lon }; 
+  } catch (error) {
+    throw Message;
+    
+  }
 }
