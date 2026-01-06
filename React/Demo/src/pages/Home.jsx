@@ -3,145 +3,159 @@ import { Button } from "bootstrap/dist/js/bootstrap.min";
 
 import React, { useState } from "react";
 
-const Home = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (!email || !password) {
-      alert("Please fill all fields");
-      return;
-    }
-
-    setLoading(true);
-
-    setTimeout(() => {
-      console.log({
-        email,
-        password,
-      });
-
-      alert("Login Successful");
-      setLoading(false);
-      setEmail("");
-      setPassword("");
-    }, 1500);
-  };
-
-  return (
-    <>
-    <div className="container d-flex justify-content-center align-items-center min-vh-100">
-      <div className="card shadow-lg p-4 w-96" style={{ width: "350px" }}>
-        <h3 className="text-center mb-4">Login</h3>
-
-        <form onSubmit={handleSubmit}>
-          <div className="mb-3">
-            <label className="form-label">Email / Enrollment ID</label>
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Enter email or ID"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
-
-          <div className="mb-3">
-            <label className="form-label">Password</label>
-            <input
-              type="password"
-              className="form-control"
-              placeholder="Enter password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
-
-          <button
-            type="submit"
-            className="btn btn-primary w-100"
-            disabled={loading}>
-            {loading ? "Logging" : "Login"}
-          </button>
-        </form>
-      </div>
-    </div>
-    </>
-  );
-};
-
-export default Home;
-
 // const Home = () => {
-//   const [fullname, setFullname] = React.useState("");
-//   const [email, setEmail] = React.useState("");
-//   const [message, setMessage] = React.useState("");
+//   const [email, setEmail] = useState("");
+//   const [password, setPassword] = useState("");
+//   const [loading, setLoading] = useState(false);
 
-//   const HandaleClearForm  = () => {
-//     setFullname("");
-//     setEmail("");
-//     setMessage("");
-//   };
-
-//   const HandleSubmit = async (e) => {
+//   const handleSubmit = (e) => {
 //     e.preventDefault();
 
-//     setTimeout(true);
-//       try {
-//         const response =await fetch("https://official-joke-api.appspot.com/jokes/random");
-//         setTimeout(() => {
-
-//         const data = {
-//       fullname,
-//       email,
-//       message,
-//     };
-//     console.log(data);
-//   }, 5000);
-//       } catch (error) {
-//         console.log(error.message);
-
+//     if (!email || !password) {
+//       alert("Please fill all fields");
+//       return;
 //     }
-//       HandaleClearForm();
-//     };
+
+//     setLoading(true);
+
+//     setTimeout(() => {
+//       console.log({
+//         email,
+//         password,
+//       });
+
+//       alert("Login Successful");
+//       setLoading(false);
+//       setEmail("");
+//       setPassword("");
+//     }, 1500);
+//   };
+
 //   return (
 //     <>
+//     <div className="container d-flex justify-content-center align-items-center min-vh-100">
+//       <div className="card shadow-lg p-4 w-96" style={{ width: "350px" }}>
+//         <h3 className="text-center mb-4">Login</h3>
 
-//       <div className="text-center p-5 ">
-//         <h1>Login Page</h1>
-//         <div className="container">
-//           <form onReset={HandaleClearForm} onSubmit={HandleSubmit}>
-//             <div className="p-1">
-//               <label htmlFor="Email or Enrollment ID">Email or Enrollment ID </label>
-//               <input
-//                 type="text"
-//                 name="Email or Enrollment ID"
-//                 id="Email or Enrollment ID"
-//                 value={fullname}
-//                 onChange={(e) => setFullname(e.target.value)}
+//         <form onSubmit={handleSubmit}>
+//           <div className="mb-3">
+//             <label className="form-label">Email / Enrollment ID</label>
+//             <input
+//               type="text"
+//               className="form-control"
+//               placeholder="Enter email or ID"
+//               value={email}
+//               onChange={(e) => setEmail(e.target.value)}
+//             />
+//           </div>
 
-//                 placeholder="Enter your Email and ID"
-//                 className="text-primary"
-//               />
-//             </div>
-//             <div className="p-1">
-//               <label htmlFor="password">password</label>
-//               <input
-//                 type="password"
-//                 name="password"
-//                 id="password"
-//                 value={email}
-//                 onChange={(e) => setEmail(e.target.value)}
+//           <div className="mb-3">
+//             <label className="form-label">Password</label>
+//             <input
+//               type="password"
+//               className="form-control"
+//               placeholder="Enter password"
+//               value={password}
+//               onChange={(e) => setPassword(e.target.value)}
+//             />
+//           </div>
 
-//                 placeholder="Enter Password"
-//                 className="text-primary"
-//               />
-//             </div>
-{
-  /* <div className="p-1">
+//           <button
+//             type="submit"
+//             className="btn btn-primary w-100"
+//             disabled={loading}>
+//             {loading ? "Logging" : "Login"}
+//           </button>
+//         </form>
+//       </div>
+//     </div>
+//     </>
+//   );
+//   <div>
+//   <label htmlFor="gender">gender</label>
+
+//   <input type="radio" name="" id="" />
+
+// </div>
+// };
+
+// <div>
+//   <label htmlFor="religion">Religion</label>
+//   <select name="religion" id="religion">
+//     <option value="hinduism">Hinduism</option>
+//   </select>
+// </div>
+
+
+// export default Home;
+
+const Home = () => {
+  const [fullname, setFullname] = React.useState("");
+  const [email, setEmail] = React.useState("");
+  const [message, setMessage] = React.useState("");
+
+  const HandaleClearForm  = () => {
+    setFullname("");
+    setEmail("");
+    setMessage("");
+  };
+
+  const HandleSubmit = async (e) => {
+    e.preventDefault();
+
+    setTimeout(true);
+      try {
+        const response =await fetch("https://official-joke-api.appspot.com/jokes/random");
+        setTimeout(() => {
+
+        const data = {
+      fullname,
+      email,
+      message,
+    };
+    console.log(data);
+  }, 5000);
+      } catch (error) {
+        console.log(error.message);
+
+    }
+      HandaleClearForm();
+    };
+  return (
+    <>
+
+      <div className="text-center p-5 ">
+        <h1>Contact us</h1>
+        <div className="container">
+          <form onReset={HandaleClearForm} onSubmit={HandleSubmit}>
+            <div className="p-1">
+              <label htmlFor="Email or Enrollment ID">Email or Enrollment ID </label>
+              <input
+                type="text"
+                name="Email or Enrollment ID"
+                id="Email or Enrollment ID"
+                value={fullname}
+                onChange={(e) => setFullname(e.target.value)}
+
+                placeholder="Enter your Email and ID"
+                className="text-primary"
+              />
+            </div>
+            <div className="p-1">
+               <label htmlFor="password">password</label>
+         <input
+                type="password"
+                name="password"
+                id="password"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+
+                placeholder="Enter Password"
+                className="text-primary"
+              />
+            </div>
+
+   <div className="p-1">
               <label htmlFor="message">Message</label>
               <input
                 type="Message"
@@ -151,19 +165,19 @@ export default Home;
                 placeholder="Enter Message"
                 className="text-primary"
               />
-            </div> */
-}
-//             <button type="reset" className="btn btn-success">Login</button>
-//            {/* <button type="submit" className="btn btn-success">submit</button> */}
-//           </form>
-//         </div>
-//       </div>
+            </div> 
 
-//     </>
-//   );
-// };
+            <button type="reset" className="btn btn-danger p-1">Clear Form</button>
+           <button type="submit" className="btn btn-success p-1">submit</button>
+          </form>
+        </div>
+      </div>
 
-// export default Home;
+    </>
+  );
+};
+
+ export default Home;
 
 {
   /* <div className="bg-light text-dark text-center p-4">

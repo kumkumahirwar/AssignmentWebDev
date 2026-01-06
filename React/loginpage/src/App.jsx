@@ -1,32 +1,6 @@
 import React from "react";
+import Header from "./Component/Header";
+import Footer from "./Component/Footer";
+import Home from "./Pages/Home";
 
-
-
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-
-
-import Home from "./pages/Home";
-
-
-function App() {
-  return (
-    <>
-     <BrowserRouter>
-     <Header/>
-    <Routes>
-      <Route path="/" element={<Home />} />
-      
-
-    </Routes>
-     
-     <Footer />
-     </BrowserRouter>   
-      </>
-  );
-};
-
-
-
-
-
-export default App;
+<Header />
